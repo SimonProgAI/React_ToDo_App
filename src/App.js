@@ -1,8 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from './pages/Layout';
+import Contact from './pages/Contact';
 import Home from './pages/Home';
-import ContactForm from './pages/ContactForm';
+import Layout from './pages/Layout';
+import NoPage from './pages/NoPage';
+
+
 
 import './App.css';
 
@@ -10,14 +13,13 @@ function App() {
   return (
     <BrowserRouter>
         <Routes path="/" element={<Layout />}>
-            <Route index element={<Home/>}/>
-            <Route path="contactform" element={<ContactForm />} />
-
-
+            <Route index element={<Home />}/>
+            <Route path="contact" element={<Contact />} />
+            <Route path="*" element={<NoPage />} />
         </Routes>
     </BrowserRouter>
 
-  )
+  );
 }
 
 export default App;
