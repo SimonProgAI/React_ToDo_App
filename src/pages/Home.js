@@ -1,12 +1,11 @@
-import TaskInput from "../components/TaskInput";
-import TaskOutput from "../components/TaskOutput";
+import React from "react";
+import TaskManager from "../components/TaskManager";
 
 const Home = () => {
     return (
         <div>
             <h1>Home</h1>
-            <TaskInput />
-            <TaskOutput />
+            <TaskManager/>
         </div>
     )
 }
