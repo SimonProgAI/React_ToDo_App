@@ -31,12 +31,22 @@ function TaskManager() {
         console.log(listTemp);
         let wholeList = [...list, listTemp];
         setList(wholeList);
+        console.log(list);
     }
     
-    const deleteItem = (e) =>{
-        e.preventDefault();
-        //delete item with current key/id from listTemp or list or whole list
+    const deleteItem = (task) =>{
+        console.log('deleteItem called on');
+        let idx = list.findIndex((t) => t.task === task);
+        let wholeList = [...list];
+        wholeList.splice(idx, 1);
+        setList(wholeList);
     }
+
+   /* const handleDelete = (e) =>{
+        e.preventDefault();
+        e.stopPropagation();
+        deleteItem(task);
+    }*/
 
     const completedItem = (e) => {
         e.preventDefault();
@@ -46,8 +56,8 @@ function TaskManager() {
 
     return(
         <div>
-          <TaskInput taskRef={taskRef} valueRef={valueRef} completedRef={completedRef} addItem={addItem}/>
-          <TaskOutput list={list}/>
+          <TaskInput taskRef={taskRef} valueRef={valueRef} completedRef={completedRef} addItem={addItem} />
+          <TaskOutput list={list} deleteItem={deleteItem}/>
         </div>
       )
 }

@@ -8,12 +8,12 @@ function TaskOutput({list, deleteItem}){
         <div>
             {list.map( (list) => {
                 return(
-                    <div className='taskOutput'>
+                    <div key={list.task}className='taskOutput'>
                         <span>{list.task}</span>, 
                         <span>{list.value}</span>, 
                         <span>{list.completed}<label>Done<input type="checkbox"/></label></span>
                         <button>edit</button>
-                        <button onClick={deleteItem}>delete</button>
+                        <button onClick={() => deleteItem()}>delete</button>
                     </div>
                 )
             })     
@@ -21,5 +21,5 @@ function TaskOutput({list, deleteItem}){
         </div>
     )
 }
-
+console.log(TaskOutput);
 export default TaskOutput;
