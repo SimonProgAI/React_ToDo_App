@@ -2,7 +2,7 @@ import React from "react";
 
 
 //<TaskInput taskRef={taskRef} valueRef={valueRef} completedRef={completedRef} handleAdd={handleAdd}
-const TaskInput = ({taskRef, valueRef, addItem}) => {
+const TaskInput = ({taskRef, dollarValueRef, addItem}) => {
     return(
         <form>
             <label>
@@ -11,7 +11,7 @@ const TaskInput = ({taskRef, valueRef, addItem}) => {
             </label>
             <label>
                 $
-                <input ref={valueRef} type="number" min="5" max="40" step="5" id="TaskValueNumber" />
+                <input ref={dollarValueRef} type="number" min="5" max="40" step="5" id="TaskValueNumber" />
             </label>
             <button onClick={addItem}>Add</button>
         </form>
