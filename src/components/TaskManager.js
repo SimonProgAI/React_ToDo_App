@@ -45,7 +45,6 @@ function TaskManager() {
     const calculateSavings = () => {
         let sum = 0;
         for (let i=0;i<listHistory.length;i++) {
-            
             sum += Number(listHistory[i].dollarValue);
         }
         setSavings(sum);
