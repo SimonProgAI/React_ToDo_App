@@ -11,6 +11,9 @@ const Layout = () => {
                     <li>
                         <Link to="/contact">Contact</Link>&nbsp;&nbsp;
                     </li>
+                    <li>
+                        <Link to="/profile">Profile</Link>&nbsp;&nbsp;
+                    </li>
                 </ul>
             </nav>
             

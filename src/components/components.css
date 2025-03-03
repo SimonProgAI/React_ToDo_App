@@ -1,6 +1,9 @@
 .taskOutput {
     border-style:solid;
-    margin: 50px;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
     border-color: chocolate;
 }
 
@@ -13,4 +16,9 @@
 .taskSavings {
     border-style:solid;
     border-color: aquamarine;
+}
+
+.taskInputSection {
+    display: flex;
+    justify-content: right;
 }

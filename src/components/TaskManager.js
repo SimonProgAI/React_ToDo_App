@@ -1,12 +1,31 @@
 import React from "react";
 import { useState, useRef } from "react";
+import ProfileForm from "./ProfileForm";
+import ProfileOutput from "./ProfileOutput";
 import TaskInput from "./TaskInput";
 import TaskOutput from "./TaskOutput";
 import TaskHistory from "./TaskHistory";
 import TaskSavings from "./TaskSavings";
 
+import './components.css';
 
 function TaskManager() {
+
+//VARs for CreateProfile
+    const [user, setUser] = useState();
+    const userRef = useRef();
+    const [objective, setObjective] = useState();
+    const objectiveRef = useRef()
+    
+    const createProfile = (e) => {
+        e.preventDefault();
+        const user = userRef.current.value;
+        console.log(user);
+
+
+
+    }
+
 
 //VARs for TaskOutput
     const initList = [
@@ -17,7 +36,6 @@ function TaskManager() {
 
     const taskRef = useRef();
     const dollarValueRef = useRef();
-    //const completedRef = useRef(false);
 
 //VARs for TaskHistory
    const [listHistory, setListHistory] = useState([]);
@@ -30,12 +48,9 @@ function TaskManager() {
         console.log('addItem called')
         const task = taskRef.current.value;
         const dollarValue = Number(dollarValueRef.current.value);
-        //const completed = Boolean(completedRef.current.value);
         let listTemp = {};
         listTemp.task = task;
         listTemp.dollarValue = dollarValue;
-        //listTemp.completed doesn't console.log
-        //listTemp.completed = completed; 
         console.log(listTemp);
         let wholeList = [...list, listTemp];
         setList(wholeList);
@@ -51,7 +66,6 @@ function TaskManager() {
         return sum;
     }
     
-    
     const deleteItem = (task) =>{
         let idx = list.findIndex((entry) => entry.task === task);
         //console.log(idx); 
@@ -59,7 +73,6 @@ function TaskManager() {
         wholeList.splice(idx, 1);
         setList(wholeList);
     }
-
     
     //IN PROGRESS
     const editItem = (task) =>{    
@@ -95,11 +108,10 @@ function TaskManager() {
 
     }
     
-    //UNDO item from Task History
-
-    // Display Savings by adding the value of completed items
     return(
         <div>
+          <ProfileForm userRef={userRef} createProfile={createProfile}/>
+          <ProfileOutput />
           <TaskInput taskRef={taskRef} dollarValueRef={dollarValueRef} addItem={addItem}  />
           <TaskOutput 
                 list={list} 
@@ -109,9 +121,7 @@ function TaskManager() {
             />
           <br></br>
           <TaskHistory listHistory={listHistory} undoCompletedItem={undoCompletedItem} />
-          <TaskSavings calculateSavings={calculateSavings}/>
-            
-                  
+          <TaskSavings calculateSavings={calculateSavings}/>  
         </div>
       )
 }

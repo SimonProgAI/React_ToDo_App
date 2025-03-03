@@ -6,6 +6,7 @@ function TaskOutput({list, deleteItem, completedItem, editItem}){
     
     return(
         <div>
+            <h3>To-do</h3>
             {list.map( (list) => {
                 return(
                     <div key={list.task}className='taskOutput'>

@@ -6,6 +6,7 @@ function TaskHistory({listHistory,undoCompletedItem}){
     
     return(
         <div>
+            <h3>Completed Tasks</h3>
             {listHistory.map( (listHistory) => {
                 return( 
                     <div key={listHistory.task} className='taskHistory'>

@@ -5,7 +5,8 @@ const TaskSavings = ({calculateSavings}) => {
     return(
         <div className="taskSavings">
             <h1>Savings</h1>
-            <span>${calculateSavings()}</span>
+            <span>${calculateSavings()} saved</span><br></br>
+            <span>$__ left!</span>
         </div>
     );
 }
