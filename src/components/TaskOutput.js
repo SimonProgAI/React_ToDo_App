@@ -2,7 +2,7 @@ import React from "react";
 import './components.css';
 
 
-function TaskOutput({list, deleteItem, setSelectedTask}){
+function TaskOutput({list, deleteItem, completedItem, editItem}){
     
     return(
         <div>
@@ -11,9 +11,9 @@ function TaskOutput({list, deleteItem, setSelectedTask}){
                     <div key={list.task}className='taskOutput'>
                         <span>{list.task}</span>, 
                         <span>{list.dollarValue}</span>, 
-                        <span>{list.completed}<label>Done<input type="checkbox"/></label></span>
-                        <button>edit</button>
-                        <button onClick={()=>deleteItem(list.task)} >delete</button>
+                        <span>{list.completed}<label>Done<input type="checkbox" onChange={()=>completedItem(list.task)}/></label></span>
+                        <button onClick={()=>editItem(list.task)}>edit</button>
+                        <button onClick={()=>deleteItem(list.task)}>delete</button>
                     </div>
                 )
             })     
