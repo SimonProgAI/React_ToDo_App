@@ -1,9 +1,16 @@
 .taskOutput {
     border-style:solid;
     margin: 50px;
+    border-color: chocolate;
 }
 
 .taskHistory {
-border-style:solid;
-margin: 50px;
+    border-style:solid;
+    margin: 10px;
+    border-color: blue;
+}
+
+.taskSavings {
+    border-style:solid;
+    border-color: aquamarine;
 }

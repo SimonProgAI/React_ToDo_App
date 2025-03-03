@@ -9,11 +9,13 @@ function TaskOutput({list, deleteItem, completedItem, editItem}){
             {list.map( (list) => {
                 return(
                     <div key={list.task}className='taskOutput'>
-                        <span>{list.task}</span>, 
-                        <span>{list.dollarValue}</span>, 
+                        <span>{list.task}</span> 
+                        <span> ${list.dollarValue}</span>, 
                         <span>{list.completed}<label>Done<input type="checkbox" onChange={()=>completedItem(list.task)}/></label></span>
                         <button onClick={()=>editItem(list.task)}>edit</button>
                         <button onClick={()=>deleteItem(list.task)}>delete</button>
+                        <br></br>
+                        <span className="editArea"></span>
                     </div>
                 )
             })     
