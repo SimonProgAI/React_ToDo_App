@@ -6,13 +6,12 @@ function TaskHistory({listHistory,undoCompletedItem}){
     
     return(
         <div>
-            <h3>Completed Tasks</h3>
             {listHistory.map( (listHistory) => {
                 return( 
                     <div key={listHistory.task} className='taskHistory'>
-                        <span>{listHistory.task}</span> 
-                        <span> ${listHistory.dollarValue}</span>
-                        <span> <button onClick={()=>undoCompletedItem(listHistory.task)}>not completed</button></span> 
+                        <span >{listHistory.task}</span> 
+                        <span > ${listHistory.dollarValue}</span>
+                        <span ><button onClick={()=>undoCompletedItem(listHistory.task)}>Incomplete</button></span> 
                     </div>
                 )
             })     

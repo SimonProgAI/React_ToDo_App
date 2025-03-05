@@ -1,21 +1,83 @@
+/*GENERAL*/
+*{font-family: cursive;}
+body {
+background-color:floralwhite;
+}
+h2,h3 {
+    text-align: center;
+    margin-top: 0.1rem;
+    font-size:x-large;
+}
+
+label {
+    transform: scale(1.2);
+    margin:0.5rem;
+    padding: 0.3rem;
+    font-size:1.5rem;
+}
+
+button {
+    transform: scale(1.2);
+    margin:0.5rem;
+    padding: 0.3rem;
+    font-size:1.2rem;
+}
+
+input[type="checkbox"] {
+    transform: scale(2);
+    margin:1rem;
+    padding: 0.4rem;
+}
+
+input[type="text"], 
+input[type="number"], 
+input[type="email"] 
+{
+    transform: scale(1);
+    margin:0.4rem;
+    padding: 0.4rem;
+}
+
+/*CLASSNAME*/
 .taskOutput {
     border-style:solid;
+    border-radius: 0.5rem;
     margin: 5px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: right;
+    justify-content: center;
     border-color: chocolate;
+    font-size:1.5rem;
+}
+
+.taskOutput > span {
+    width: calc(100% / 4); /* replace 3 with the number of spans */
+    text-align: center;
+    text-wrap-mode: auto;
 }
 
 .taskHistory {
     border-style:solid;
-    margin: 10px;
+    border-radius: 0.5rem;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     border-color: blue;
+    font-size:1.5rem;
+}
+
+.taskHistory > span {
+    width: calc(100% / 3); /* replace 3 with the number of spans */
+    text-align: center;
+    text-wrap-mode: auto;
 }
 
 .taskSavings {
     border-style:solid;
-    border-color: aquamarine;
+    border-radius: 0.5rem;
+    border-color: rgb(154, 192, 16);
+    font-size:1.5rem;
 }
 
 .taskInputSection {
@@ -23,20 +85,39 @@
     justify-content: right;
 }
 
-#CreateProfileForm {
-    margin:0.8rem;
-    align-content:center;
-}
-#CreateProfileForm>input{
-    
-}
-#CreateProfileForm>button{
-    margin:0.8rem;
+.ContactForm {    
+    margin-left: 5rem;
+    display: block;
+    justify-content: center;
 }
 
+/*HOVER*/
+button:hover {
+    transform: scale(1.3);
+}
+
+input[type="checkbox"]:hover{
+    transform: scale(2.5);
+}
+
+/* DESKTOP LAYOUT */
+.ToDo-Container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+}
+    
+.ToDo-Container>div {
+    background-color: rgb(241, 244, 247);
+    padding: 1.5rem;
+}
+
+/* MOBILE LAYOUT */
+@media only screen and (max-width: 768px) {
 .ToDo-Container {
     display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+}
 }
 .ToDo-Container > div{
     border-style:solid;

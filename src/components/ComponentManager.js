@@ -102,12 +102,12 @@ function ComponentManager() {
             sum += Number(listHistory[i].dollarValue);
         }
         setSavings(sum);
-        let message = `$${savings} saved`;
+        let message = `$${savings} saved,`;
         return message;
     }
     const calculateToObjective = () => {
         let difference = objective - savings;
-        let message1 = `$${difference} left to save!`;
+        let message1 = `$${difference} to go!`;
         let message2 = `Set an objective and start saving!`;
         if (!isNaN(objective)){
             return message1;
@@ -119,12 +119,20 @@ function ComponentManager() {
 
     return(
         <div className="ToDo-Container">
-          <div><CreateProfile userRef={userRef} objectiveRef={objectiveRef} createProfile={createProfile}/></div>
-          <div><ProfileOutput user={user} objective={objective}/></div>
-          <div><TaskInput taskRef={taskRef} dollarValueRef={dollarValueRef} addItem={addItem}  /></div>
-          <div><TaskOutput list={list} deleteItem={deleteItem} completedItem={completedItem} /></div>
-          <div><TaskHistory listHistory={listHistory} undoCompletedItem={undoCompletedItem} /></div>
-          <div><TaskSavings calculateSavings={calculateSavings} calculateToObjective={calculateToObjective}/></div>  
+            <div>
+                <ProfileOutput user={user} objective={objective}/>
+                <CreateProfile userRef={userRef} objectiveRef={objectiveRef} createProfile={createProfile}/>
+            </div>
+            <div>
+                <h3>To-do</h3>
+                <TaskInput taskRef={taskRef} dollarValueRef={dollarValueRef} addItem={addItem}  />
+                <TaskOutput list={list} deleteItem={deleteItem} completedItem={completedItem} />
+            </div>
+            <div>
+                <h3>Completed Tasks</h3>
+                <TaskSavings calculateSavings={calculateSavings} calculateToObjective={calculateToObjective}/>
+                <TaskHistory listHistory={listHistory} undoCompletedItem={undoCompletedItem} />
+            </div> 
         </div>
       )
 }

@@ -1,7 +1,7 @@
 import ContactFormManager from "../components/ContactFormManager";
 const Contact = () => {
     return (
-        <div>
+        <div className="ContactForm">
             <h1>Contact</h1>
             <ContactFormManager />
         </div>
