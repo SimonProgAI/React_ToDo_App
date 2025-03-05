@@ -110,18 +110,16 @@ input[type="checkbox"]:hover{
 .ToDo-Container>div {
     background-color: rgb(241, 244, 247);
     padding: 1.5rem;
+    border-radius: 0.5rem;
+    border-color: rgb(0, 0, 0);
+    margin: 10px;
+    border-style:solid;
 }
 
 /* MOBILE LAYOUT */
 @media only screen and (max-width: 768px) {
 .ToDo-Container {
     display: flex;
-  flex-direction: column;
+    flex-direction: column;
 }
-}
-.ToDo-Container > div{
-    border-style:solid;
-    border-radius: 0.5rem;
-    margin: 10px;
-    border-color: rgb(0, 0, 0);
 }
