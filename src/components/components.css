@@ -22,3 +22,25 @@
     display: flex;
     justify-content: right;
 }
+
+#CreateProfileForm {
+    margin:0.8rem;
+    align-content:center;
+}
+#CreateProfileForm>input{
+    
+}
+#CreateProfileForm>button{
+    margin:0.8rem;
+}
+
+.ToDo-Container {
+    display: flex;
+  flex-wrap: wrap;
+}
+.ToDo-Container > div{
+    border-style:solid;
+    border-radius: 0.5rem;
+    margin: 10px;
+    border-color: rgb(0, 0, 0);
+}

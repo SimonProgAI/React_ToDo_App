@@ -1,11 +1,11 @@
 import React from "react";
-import TaskManager from "../components/TaskManager";
+import ComponentManager from "../components/ComponentManager";
 
 const Home = () => {
     return (
         <div>
-            <h1>Home</h1>
-            <TaskManager/>
+            <h2>Create a Todo List and Collect Savings</h2>
+            <ComponentManager/>
         </div>
     )
 }
