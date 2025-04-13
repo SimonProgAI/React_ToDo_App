@@ -51,7 +51,7 @@ input[type="email"]
 }
 
 .taskOutput > span {
-    width: calc(100% / 4); /* replace 3 with the number of spans */
+    width: calc(100% / 4); 
     text-align: center;
     text-wrap-mode: auto;
 }
@@ -68,7 +68,7 @@ input[type="email"]
 }
 
 .taskHistory > span {
-    width: calc(100% / 3); /* replace 3 with the number of spans */
+    width: calc(100% / 3); 
     text-align: center;
     text-wrap-mode: auto;
 }

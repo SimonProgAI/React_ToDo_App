@@ -43,10 +43,10 @@ function ComponentManager() {
         const objective = objectiveRef.current.value;
         setObjective(objective);
         //console.log(objective);
-        if (user === ""||user === null||objective==="") {
+        if (!user||!objective) {
             let errMessage = `Please enter a name and objective.`;
-            console.log(errMessage)
-            alert(errMessage);
+            //console.log(errMessage)
+            alert(errMessage);//output area
         };
     }
     const addItem = (e) => {
@@ -83,6 +83,7 @@ function ComponentManager() {
         setListHistory(history);
         wholeList.splice(idx, 1);
         setList(wholeList);
+        console.log(wholeList);
         //console.log(listHistory);
     }
     const undoCompletedItem = (task) => {
